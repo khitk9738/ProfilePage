@@ -1,0 +1,101 @@
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+    <div class="login-clean">
+        <form method="post" name="emp" onsubmit="return validate_form();" >
+            <h2 class="sr-only">Create Account</h2>
+           
+            <div class="form-group">
+                <input class="form-control" id="username" type="text" name="username" value="" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="number"  name="regno" value="" onkeypress="return isNumberKey(event)" placeholder="Registration No.">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="email" type="email" name="email_id" value="" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <input class="form-control" type="number" name="contact" onkeypress="return isNumberKey(event)" value="" placeholder="Contact No.">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="password" type="password"  name="password" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <select name="dob" placeholder="Branch" class="btn btn-default">
+					<option value="Branch">Branch</option>
+					<option value="Computer Science">Computer Science</option>
+					<option value="Information Technology">Information Technology</option>
+					<option value="Electronics & Communication">Electronics & Communication</option>
+					<option value="Electrical">Electrical</option>
+					<option value="Mechanical">Mechanical</option>
+					<option value="Civil">Civil</option>
+					<option value="Production & Instrumentation">Production & Instrumentation</option>
+					<option value="Biotechnology">Biotechnology</option>
+				</select>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary btn-block" id="ca" type="submit" name="Submit" placeholder="Submit">
+             </div>
+            <div class="form-group">
+           		<input class="btn btn-primary btn-block" type="reset" placeholder="Reset All">
+           </div>
+    	</form>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    
+   <script type="text/javascript">
+   function validate_form() {
+   				var x=document.emp.username.value;
+                if (document.emp.username.value == "") {
+                    alert("Please fill in the 'Your Username' box.");
+                    return false; 
+                }
+                var y=document.emp.regno.value;
+                if (document.emp.regno.value == "") {
+                    alert("Enter Registration Number");
+                    return false;
+                }
+               
+                if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/).test(document.emp.email_id.value)) {
+                    alert("You have entered an invalid email address!")
+                    return (false);
+                }
+                
+                var z=document.emp.email_id.value;
+                var d=document.emp.dob.value;
+                var e=document.emp.contact.value;
+                
+                alert("Sucessfully Submitted");
+                alert(x+'\n'+y+'\n'+z+'\n'+d+'\n'+e)
+    
+            }
+            
+            function isNumberKey(evt) {
+                var charCode = (evt.which) ? evt.which : event.keyCode;
+                if (charCode != 46 && charCode > 31 &&
+                    (charCode < 48 || charCode > 57)) {
+                    alert("Enter Number");
+                    return false;
+                }
+                return true;
+             }
+     
+            
+            //-->
+        </script>
+</body>
+
+</html>
